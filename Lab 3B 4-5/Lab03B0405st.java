@@ -83,11 +83,3 @@ class Rational
         return num2;
 	}
 }
-
-
-
-
-
-
-
-
