@@ -10,7 +10,7 @@ public class Lab03B0405st
 	{
 		System.out.println("***********************************");
       System.out.println("Lab for Unit 3, Part B, Topics 4-5");
-      System.out.println("80 Point Version");
+      System.out.println("100 Point Version");
       System.out.println("By: John Smith");   // Substitute your own name here.
       System.out.println("***********************************\n");
          
@@ -33,19 +33,20 @@ class Rational
    // Complete implementation required for the 80-Point Version.
 	public Rational(int n, int d) 
 	{
-
+        num = n;
+        den = d;
 	}
 
    // Complete implementation required for the 80-Point Version.
 	public double getDecimal() 
    { 
-      return 0.0;
+      return num/ ((float) den);
    }
    
    // Complete implementation required for the 80-Point Version.
    public String getRational() 
-   { 
-      return " "; 
+   {
+       return num + "/" + den;
    }
 
    // Complete implementation required for the 100-Point Version.
