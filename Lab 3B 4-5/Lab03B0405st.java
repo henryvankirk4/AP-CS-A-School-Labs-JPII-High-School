@@ -1,0 +1,79 @@
+// Lab03B0405st.java
+// The Rational Class Program I
+// This is the student, starting version of the Lab03B0405 assignment.
+
+import java.util.Scanner;
+
+public class Lab03B0405st
+{
+	public static void main (String[] args)
+	{
+		System.out.println("***********************************");
+      System.out.println("Lab for Unit 3, Part B, Topics 4-5");
+      System.out.println("80 Point Version");
+      System.out.println("By: John Smith");   // Substitute your own name here.
+      System.out.println("***********************************\n");
+         
+      Scanner input = new Scanner(System.in);
+		System.out.print("\nEnter the numerator ----> ");
+		int num = input.nextInt();
+		System.out.print("\nEnter the denominator --> ");
+		int den = input.nextInt();
+		Rational r = new Rational(num,den);
+		r.displayData();
+	}
+}
+
+
+class Rational
+{
+	private int num;  // numerator
+	private int den;  // denominator
+
+   // Complete implementation required for the 80-Point Version.
+	public Rational(int n, int d) 
+	{
+
+	}
+
+   // Complete implementation required for the 80-Point Version.
+	public double getDecimal() 
+   { 
+      return 0.0;
+   }
+   
+   // Complete implementation required for the 80-Point Version.
+   public String getRational() 
+   { 
+      return " "; 
+   }
+
+   // Complete implementation required for the 100-Point Version.
+   // NOTE: This method MUST call method <getGCF>.
+	public String getReduced() 
+   {
+      return " ";
+   }
+
+   // Method provided for the 80-Point Version.
+   // Additional code required for the 100-Point Version.
+	public void displayData()
+	{
+		System.out.println();
+		System.out.println(getRational() + " equals " + getDecimal());
+	}
+
+   // Complete implementation required for the 100-Point Version.
+	public int getGCF(int n1,int n2)
+	{
+		return 0;
+	}
+}
+
+
+
+
+
+
+
+
