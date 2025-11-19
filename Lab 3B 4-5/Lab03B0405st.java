@@ -53,7 +53,10 @@ class Rational
    // NOTE: This method MUST call method <getGCF>.
 	public String getReduced() 
    {
-      return " ";
+      int gcf = getGCF(num,den);
+      int reducedNum = num/gcf;
+      int reducedDen = den/gcf;
+      return reducedNum + "/" + reducedDen;
    }
 
    // Method provided for the 80-Point Version.
@@ -62,12 +65,22 @@ class Rational
 	{
 		System.out.println();
 		System.out.println(getRational() + " equals " + getDecimal());
+        System.out.println();
+        System.out.println("and reduces to "  + getReduced());
 	}
 
    // Complete implementation required for the 100-Point Version.
 	public int getGCF(int n1,int n2)
 	{
-		return 0;
+		int num1 = num;
+        int num2 = den;
+        int remainder = num1 % num2;
+        while (remainder != 0){
+            num1 = num2;
+            num2 = remainder;
+            remainder = num1 % num2;
+        }
+        return num2;
 	}
 }
 
