@@ -65,15 +65,13 @@ class Rational
    // Complete implementation required for the 80-Point Version.
 	private int getGCF(int n1,int n2)
 	{
-        int num1 = num;
-        int num2 = den;
-        int remainder = num1 % num2;
+        int remainder = n1 % n2;
         while (remainder != 0){
-            num1 = num2;
-            num2 = remainder;
-            remainder = num1 % num2;
+            n1 = n2;
+            n2 = remainder;
+            remainder = n1 % n2;
         }
-        return num2;
+        return n2;
 	}
 
    // Complete implementation required for the 80-Point Version.
