@@ -42,14 +42,13 @@ class Rational
 	private int num;  // numerator
 	private int den;  // denominator
 
-   // Complete implementation required for the 80-Point Version.
+    // Complete implementation required for the 80-Point Version.
 	public Rational()
 	{
         num = 1;
         den = 1;
 	}
-
-   // Complete implementation required for the 80-Point Version.
+    // Complete implementation required for the 80-Point Version.
 	public Rational(int n, int d)
 	{
         num = n;
@@ -62,8 +61,8 @@ class Rational
        return num + "/" + den;
    }
 
-   // Complete implementation required for the 80-Point Version.
-	private int getGCF(int n1,int n2)
+     // Complete implementation required for the 80-Point Version.
+    private int getGCF(int n1,int n2)
 	{
         int remainder = n1 % n2;
         while (remainder != 0){
@@ -86,6 +85,8 @@ class Rational
    // Complete implementation required for the 80-Point Version.
 	public void showMultiplication(Rational r1, Rational r2)
 	{   
+        Rational r1Copy = new Rational(r1.num,r1.den);
+        Rational r2Copy = new Rational(r2.num,r2.den);
         System.out.println();
         System.out.println(r1.getRational() + "*" +  r2.getRational() + "=");
  	}
@@ -93,6 +94,8 @@ class Rational
    // Complete implementation required for the 80-Point Version.
    public void showDivision(Rational r1, Rational r2)
 	{
+        Rational r1Copy = new Rational(r1.num,r1.den);
+        Rational r2Copy = new Rational(r2.num,r2.den);
         System.out.println();
         System.out.println(r1.getRational() + "/" +  r2.getRational() + "=");
  	}
@@ -100,6 +103,8 @@ class Rational
    // Complete implementation required for the 100-Point Version.
    public void showAddition(Rational r1, Rational r2)
 	{
+        Rational r1Copy = new Rational(r1.num,r1.den);
+        Rational r2Copy = new Rational(r2.num,r2.den);
         System.out.println();
         System.out.println(r1.getRational() + "+" +  r2.getRational() + "=");
  	}
@@ -107,8 +112,9 @@ class Rational
    // Complete implementation required for the 100-Point Version.
    public void showSubtraction(Rational r1, Rational r2)
    {
+       Rational r1Copy = new Rational(r1.num,r1.den);
+       Rational r2Copy = new Rational(r2.num,r2.den);
        System.out.println();
        System.out.println(r1.getRational() + "-" +  r2.getRational() + "=");
    }
 }
-  
