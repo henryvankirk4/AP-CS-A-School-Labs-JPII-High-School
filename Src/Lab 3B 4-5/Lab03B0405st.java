@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class Lab03B0405st
 {
-	public static void main (String[] args)
+   public static void main (String[] args)
 	{
-		System.out.println("***********************************");
+      System.out.println("***********************************");
       System.out.println("Lab for Unit 3, Part B, Topics 4-5");
       System.out.println("100 Point Version");
       System.out.println("By: John Smith");   // Substitute your own name here.
@@ -27,14 +27,14 @@ public class Lab03B0405st
 
 class Rational3B
 {
-	private int num;  // numerator
+   private int num;  // numerator
 	private int den;  // denominator
 
    // Complete implementation required for the 80-Point Version.
 	public Rational3B(int n, int d)
 	{
-        num = n;
-        den = d;
+      num = n;
+      den = d;
 	}
 
    // Complete implementation required for the 80-Point Version.
