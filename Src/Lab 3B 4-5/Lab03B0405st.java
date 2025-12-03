@@ -19,19 +19,19 @@ public class Lab03B0405st
 		int num = input.nextInt();
 		System.out.print("\nEnter the denominator --> ");
 		int den = input.nextInt();
-		Rational r = new Rational(num,den);
+		Rational3B r = new Rational3B(num,den);
 		r.displayData();
 	}
 }
 
 
-class Rational
+class Rational3B
 {
 	private int num;  // numerator
 	private int den;  // denominator
 
    // Complete implementation required for the 80-Point Version.
-	public Rational(int n, int d) 
+	public Rational3B(int n, int d)
 	{
         num = n;
         den = d;
