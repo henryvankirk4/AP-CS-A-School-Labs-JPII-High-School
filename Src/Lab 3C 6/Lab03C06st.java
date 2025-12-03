@@ -88,25 +88,29 @@ class Rational
    // Complete implementation required for the 80-Point Version.
 	public void showMultiplication(Rational r1, Rational r2)
 	{   
-
+        System.out.println();
+        System.out.println(r1.getRational() + "*" +  r2.getRational() + "=");
  	}
    
    // Complete implementation required for the 80-Point Version.
    public void showDivision(Rational r1, Rational r2)
-	{   
-
+	{
+        System.out.println();
+        System.out.println(r1.getRational() + "/" +  r2.getRational() + "=");
  	}
    
    // Complete implementation required for the 100-Point Version.
    public void showAddition(Rational r1, Rational r2)
-	{   
-
+	{
+        System.out.println();
+        System.out.println(r1.getRational() + "+" +  r2.getRational() + "=");
  	}
 
    // Complete implementation required for the 100-Point Version.
    public void showSubtraction(Rational r1, Rational r2)
-   {   
-
- 	}
+   {
+       System.out.println();
+       System.out.println(r1.getRational() + "-" +  r2.getRational() + "=");
+   }
 }
   
