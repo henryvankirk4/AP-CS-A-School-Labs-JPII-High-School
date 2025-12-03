@@ -40,7 +40,7 @@ class Rational3B
    // Complete implementation required for the 80-Point Version.
 	public double getDecimal() 
    { 
-      return num/ ((float) den);
+      return num/ ((double) den);
    }
    
    // Complete implementation required for the 80-Point Version.
