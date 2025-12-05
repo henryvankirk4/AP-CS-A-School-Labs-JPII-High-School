@@ -112,8 +112,13 @@ class Rational
 	{
         Rational r1Copy = new Rational(r1.num,r1.den);
         Rational r2Copy = new Rational(r2.num,r2.den);
+        r1Copy.num *= r2Copy.den;
+        r2Copy.num *= r1Copy.den;
+        int num = r1Copy.num + r2Copy.num;
+        int den =  r1Copy.den * r2Copy.den;
+        Rational added = new Rational(num, den);
         System.out.println();
-        System.out.println(r1.getRational() + "+" +  r2.getRational() + "=");
+        System.out.println(r1.getRational() + "+" +  r2.getRational() + "=" + added.getReduced());
  	}
 
     // Complete implementation required for the 100-Point Version.
@@ -121,7 +126,12 @@ class Rational
     {
         Rational r1Copy = new Rational(r1.num,r1.den);
         Rational r2Copy = new Rational(r2.num,r2.den);
+        r1Copy.num *= r2Copy.den;
+        r2Copy.num *= r1Copy.den;
+        int num = r1Copy.num - r2Copy.num;
+        int den =  r1Copy.den * r2Copy.den;
+        Rational subtracted = new Rational(num, den);
         System.out.println();
-        System.out.println(r1.getRational() + "-" +  r2.getRational() + "=");
+        System.out.println(r1.getRational() + "-" +  r2.getRational() + "=" + subtracted.getReduced());
     }
 }
