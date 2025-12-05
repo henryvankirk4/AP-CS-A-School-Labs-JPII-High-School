@@ -92,7 +92,7 @@ class Rational
         int den =  r1Copy.den * r2Copy.den;
         Rational multiplied = new Rational(num, den);
         System.out.println();
-        System.out.println(r1.getRational() + "*" +  r2.getRational() + "=" + multiplied.getReduced());
+        System.out.println(r1.getRational() + " * " +  r2.getRational() + " = " + multiplied.getReduced());
  	}
    
     // Complete implementation required for the 80-Point Version.
@@ -104,7 +104,7 @@ class Rational
         int den = r1Copy.den * r2Copy.num;
         Rational divided = new Rational(num, den);
         System.out.println();
-        System.out.println(r1.getRational() + "/" +  r2.getRational() + "=" + divided.getReduced());
+        System.out.println(r1.getRational() + " / " +  r2.getRational() + " = " + divided.getReduced());
  	}
    
     // Complete implementation required for the 100-Point Version.
@@ -118,7 +118,7 @@ class Rational
         int den =  r1Copy.den * r2Copy.den;
         Rational added = new Rational(num, den);
         System.out.println();
-        System.out.println(r1.getRational() + "+" +  r2.getRational() + "=" + added.getReduced());
+        System.out.println(r1.getRational() + " + " +  r2.getRational() + " = " + added.getReduced());
  	}
 
     // Complete implementation required for the 100-Point Version.
@@ -132,6 +132,6 @@ class Rational
         int den =  r1Copy.den * r2Copy.den;
         Rational subtracted = new Rational(num, den);
         System.out.println();
-        System.out.println(r1.getRational() + "-" +  r2.getRational() + "=" + subtracted.getReduced());
+        System.out.println(r1.getRational() + " - " +  r2.getRational() + " = " + subtracted.getReduced());
     }
 }
