@@ -19,11 +19,28 @@ public class Lab03C06st
 	    int num1 = input.nextInt();
 		System.out.print("\nEnter the 1st denominator --> ");
 		int den1 = input.nextInt();
+        while(den1 == 0) {
+            System.out.println();
+            System.out.println("You cannot have a denominator of 0.");
+            System.out.print("Please try again.");
+            System.out.println();
+            System.out.print("\nEnter the 1st denominator --> ");
+            den1 = input.nextInt();
+        }
 		System.out.print("\nEnter the 2nd numerator ----> ");
 		int num2 = input.nextInt();
 		System.out.print("\nEnter the 2nd denominator --> ");
 		int den2 = input.nextInt();
+        while(den2 == 0) {
+            System.out.println();
+            System.out.println("You cannot have a denominator of 0.");
+            System.out.print("Please try again.");
+            System.out.println();
+            System.out.print("\nEnter the 2nd denominator --> ");
+            den2 = input.nextInt();
+        }
         System.out.println();
+
         input.close();
 
 		Rational r1 = new Rational(num1,den1);
@@ -36,7 +53,6 @@ public class Lab03C06st
         r3.showSubtraction(r1,r2);       // required for 100-points
 	}
 }
-
 
 class Rational
 {
@@ -80,6 +96,13 @@ class Rational
         int gcf = getGCF(num,den);
         int reducedNum = num/gcf;
         int reducedDen = den/gcf;
+        if (reducedDen < 0) {
+            reducedNum *= -1;
+            reducedDen *= -1;
+        }
+        if (reducedDen == 1) {
+            return "" + reducedNum;
+        }
         return reducedNum + "/" + reducedDen;
     }
 
