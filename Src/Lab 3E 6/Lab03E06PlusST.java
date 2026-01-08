@@ -11,7 +11,7 @@ public class Lab03E06PlusST
         System.out.println("**********************************");
         System.out.println("Lab for Unit 3, Parts E, Topic 6+");
         System.out.println("100 Point Version");
-        System.out.println("By: Anthony Prosser");   // Substitute your own name here.
+        System.out.println("By: John Smith");   // Substitute your own name here.
         System.out.println("**********************************");
 
         Bank accountAJ = new Bank("Arthur James",2025,800,8000);
