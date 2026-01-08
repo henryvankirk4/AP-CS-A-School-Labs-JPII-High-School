@@ -40,10 +40,26 @@ class Bank
     {
         if (accountIsNotValid("Checking Withdrawal"))
             return;
-
-        checkingBalance -= withdrawal;
-        System.out.printf("\n$%,.2f",withdrawal);
-        System.out.println(" has been withdrawn from " + name + "'s Checking Account.");
+        if (withdrawal <= checkingBalance) {
+            checkingBalance -= withdrawal;
+            System.out.printf("\n$%,.2f",withdrawal);
+            System.out.println(" has been withdrawn from " + name + "'s Checking Account.");
+        } else if (withdrawal <= checkingBalance + savingsBalance) {
+            double overdraft =  withdrawal - checkingBalance;
+            savingsBalance -= overdraft;
+            checkingBalance = checkingBalance - withdrawal + overdraft;
+            System.out.println("\nOVERDRAFT PROTECTION:");
+            System.out.printf("%.2f",overdraft);
+            System.out.println(" has been transferred from savings to checking.");
+            System.out.printf("$%,.2f",withdrawal);
+            System.out.println(" has been withdrawn from " + name + "'s Checking Account.");
+        } else {
+            checkingBalance -= 40;
+            System.out.println("\nINSUFFICIENT FUNDS in " + name + "'s Combined Accounts.");
+            System.out.printf("$%,.2f",withdrawal);
+            System.out.println(" withdrawal has been declined.");
+            System.out.println("$40 Overdraft Fee Charged.");
+        }
     }
 
     public Bank (String n, int msy, double cb, double sb)
