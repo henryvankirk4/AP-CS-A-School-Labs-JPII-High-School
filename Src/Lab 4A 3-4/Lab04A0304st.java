@@ -1,6 +1,4 @@
 // Lab04A0304st.java
-// The Sieve of Eratosthenes
-// 100 Point Version
 
 import java.util.Scanner;
 
@@ -19,8 +17,8 @@ public class Lab04A0304st
    {
       System.out.println("***********************************");
       System.out.println("Lab for Unit 4, Part A, Topics 1-4");
-      System.out.println("100 Point Version");
-      System.out.println("By: Henry Van Kirk"); // <-- put your name
+      System.out.println("110 Point Version");
+      System.out.println("By: John Smith"); // <-- put your name
       System.out.println("***********************************\n");
    }
 
