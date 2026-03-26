@@ -4,6 +4,7 @@
 
 import java.util.Scanner;
 
+
 public class Lab04Kst {
     public static void main(String args[]) {
         heading();
@@ -100,28 +101,26 @@ class Knight {
      */
     private boolean getMove() { //Moves the knight and then returns true if moved, returns false if no more moves
         int[][] moves = {{-1,2},{1,2},{2,1},{2,-1},{1,-2},{-1,-2},{-2,-1},{-2,1}};
-        int bestMove = 0;
-        for (int i = 1; i < moves.length; i++) {
+        int leastAccess = 10;
+        int bestMove = -1;
+        for (int i = 0; i < moves.length; i++) {
             int[] move = moves[i];
 
             int newRow = currentRow + move[0];
             int newCol = currentCol + move[1];
 
-            int bestRow = currentRow + moves[bestMove][0];
-            int bestCol = currentCol + moves[bestMove][1];
 
             if (inBoard(newRow, newCol) &&
                 board[newRow][newCol] == 0 &&
-                    ACCESS[newRow][newCol] <= ACCESS[bestRow][bestCol]) {
-                bestMove =  i;
+                ACCESS[newRow][newCol] < leastAccess) {
+                leastAccess = ACCESS[newRow][newCol];
+                bestMove = i;
             }
         }
         //Check if it is a valid move, if so, make move and return true, if not, return false
-        int newRow = currentRow + moves[bestMove][0];
-        int newCol = currentCol + moves[bestMove][1];
-        if (inBoard(newRow, newCol) && board[newRow][newCol] == 0) {
-            currentRow = newRow;
-            currentCol = newCol;
+        if (bestMove >= 0) {
+            currentRow = currentRow + moves[bestMove][0];
+            currentCol = currentCol + moves[bestMove][1];
             return true;
         }
         return false;
@@ -131,13 +130,13 @@ class Knight {
      * This is the primary method that drives the Knight's Tour solution.
      */
     public void solveTour() {
-        boolean possible = false;
+        boolean moved = false;
         boolean done = false;
         board[startRow][startCol] = 1;
 
         while (!done) {
-            possible = getMove();
-            if (possible) {
+            moved = getMove();
+            if (moved) {
                 moves++;
                 board[currentRow][currentCol] = moves;
             } else
