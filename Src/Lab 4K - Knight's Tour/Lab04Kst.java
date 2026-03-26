@@ -98,51 +98,33 @@ class Knight {
      * and <currentCol> and then returns <true>.  If a move is
      * not possible, the method updates nothing and returns <false>.
      */
-    private boolean getMove() {
-        boolean possible = false;
+    private boolean getMove() { //Moves the knight and then returns true if moved, returns false if no more moves
+        int[][] moves = {{-1,2},{1,2},{2,1},{2,-1},{1,-2},{-1,-2},{-2,-1},{-2,1}};
+        int bestMove = 0;
+        for (int i = 1; i < moves.length; i++) {
+            int[] move = moves[i];
 
-        // right
-        if (inBoard(currentRow + 1, currentCol + 2) && board[currentRow + 1][currentCol + 2] == 0) {
-            currentRow += 1;
-            currentCol += 2;
-            possible = true;
-        } else if (inBoard(currentRow - 1, currentCol + 2) && board[currentRow - 1][currentCol + 2] == 0) {
-            currentRow -= 1;
-            currentCol += 2;
-            possible = true;
-        }
-        // left
-        else if (inBoard(currentRow + 1, currentCol - 2) && board[currentRow + 1][currentCol - 2] == 0) {
-            currentRow += 1;
-            currentCol -= 2;
-            possible = true;
-        } else if (inBoard(currentRow - 1, currentCol - 2) && board[currentRow - 1][currentCol - 2] == 0) {
-            currentRow -= 1;
-            currentCol -= 2;
-            possible = true;
-        }
-        // down
-        else if (inBoard(currentRow + 2, currentCol + 1) && board[currentRow + 2][currentCol + 1] == 0) {
-            currentRow += 2;
-            currentCol += 1;
-            possible = true;
-        } else if (inBoard(currentRow + 2, currentCol - 1) && board[currentRow + 2][currentCol - 1] == 0) {
-            currentRow += 2;
-            currentCol -= 1;
-            possible = true;
-        }
-        // up
-        else if (inBoard(currentRow - 2, currentCol + 1) && board[currentRow - 2][currentCol + 1] == 0) {
-            currentRow -= 2;
-            currentCol += 1;
-            possible = true;
-        } else if (inBoard(currentRow - 2, currentCol - 1) && board[currentRow - 2][currentCol - 1] == 0) {
-            currentRow -= 2;
-            currentCol -= 1;
-            possible = true;
-        }
+            int newRow = currentRow + move[0];
+            int newCol = currentCol + move[1];
 
-        return possible;
+            int bestRow = currentRow + moves[bestMove][0];
+            int bestCol = currentCol + moves[bestMove][1];
+
+            if (inBoard(newRow, newCol) &&
+                board[newRow][newCol] == 0 &&
+                    ACCESS[newRow][newCol] <= ACCESS[bestRow][bestCol]) {
+                bestMove =  i;
+            }
+        }
+        //Check if it is a valid move, if so, make move and return true, if not, return false
+        int newRow = currentRow + moves[bestMove][0];
+        int newCol = currentCol + moves[bestMove][1];
+        if (inBoard(newRow, newCol) && board[newRow][newCol] == 0) {
+            currentRow = newRow;
+            currentCol = newCol;
+            return true;
+        }
+        return false;
     }
 
     /**
