@@ -3,6 +3,7 @@
 
 import java.util.*;
 
+
 public class Lab04Lst
 {   
 	public static void main (String[] args)
@@ -21,17 +22,20 @@ public class Lab04Lst
    {
 		System.out.println("*************************");
       System.out.println("Lab for Unit 4, Lesson L");
-      System.out.println("50 Point Version");
+      System.out.println("110 Point Version");
       System.out.println("By: John Smith");   // Substitute your own name here.
       System.out.println("*************************\n");  
    }
    
    public static int getMagicSquareSize()
    {
-      
-      
-
-      return 0;
+      Scanner scanner = new Scanner(System.in);
+      int magicSquareSize = -1;
+      while (magicSquareSize < 0 || (magicSquareSize % 2) == 0){
+         System.out.print("Enter the size of the odd magic square. --> ");
+         magicSquareSize = scanner.nextInt();
+      }
+      return magicSquareSize;
    }
 }      
 
@@ -44,9 +48,21 @@ class MagicSquare
    
    public MagicSquare(int s)
    {
-      
-      
-        
+      this.size = s;
+      msMatrix = new int[size][size];
+      int currentRow = 0;
+      int currentCol = size / 2 + 1;
+         for (int counter = 1; counter < (size * size); counter++){
+         if (counter % size == 0){
+            currentRow += 1;
+         }
+         if (counter % size == 0){
+            currentRow++;
+         }
+         if (){}
+         //if multiple of size, go down 1
+         //if on edge, wrap around, else, do up one, diagonal 1
+      }
    }
    
    public void displayMatrix()
